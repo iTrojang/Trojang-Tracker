@@ -4,7 +4,7 @@ from colorama import *
 from art import *
 
 def track(message):
-    URL = "https://api.hypixel.net/player?key=046ce573-8b06-40f2-96b2-86fcb834be15&uuid=" + requests.get(f"https://api.mojang.com/users/profiles/minecraft/{message}").json()['id']
+    URL = "https://api.hypixel.net/player?key=API_KEY&uuid=" + requests.get(f"https://api.mojang.com/users/profiles/minecraft/{message}").json()['id']
     print(URL)
     data = requests.get(URL)
     datajson = data.json()
