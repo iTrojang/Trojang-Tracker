@@ -16,7 +16,7 @@ def track(message):
         time.sleep(1)
         data = requests.get(URL)
         e = data.json()
-        los = (e['player']['stats']['Bedwars']["losses_bedwars"])
+        loss = (e['player']['stats']['Bedwars']["losses_bedwars"])
         win = (e['player']['stats']['Bedwars']["wins_bedwars"])
         print(win)
         countwin = 1
@@ -27,7 +27,7 @@ def track(message):
             countwin += 1
             print('Count Win ' + countwin)
             print(requests.get(f"https://api.mojang.com/users/profiles/minecraft/{message}").json()['name'] + ' Has Won A Match Of Bedwars')
-        if los == losses + countloss:
+        if loss == losses + countloss:
             countloss += 1
             print(requests.get(f"https://api.mojang.com/users/profiles/minecraft/{message}").json()['name'] + ' Has Lost A Match Of Bedwars')
 
